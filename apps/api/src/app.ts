@@ -12,6 +12,7 @@ import { ordersRouter } from './routes/orders';
 import { profileRouter } from './routes/profile';
 import { voiceRouter } from './routes/voice';
 import { adminRouter } from './routes/admin';
+import { simulateRouter } from './routes/simulate';
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use('/api/orders', ordersRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/voice', voiceRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/simulate', simulateRouter);
 
 // --- Error Handling ---
 app.use(notFoundHandler);
