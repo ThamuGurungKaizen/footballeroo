@@ -41,7 +41,15 @@ io.on('connection', (socket) => {
 app.set('io', io);
 
 // --- Start Server ---
-httpServer.listen(env.PORT, () => {
+httpServer.listen(env.PORT, async () => {
+  // Initialize stock
+  const { initializeStock } = await import('./services/stock');
+  initializeStock();
+
+  // Initialize generation pipeline (subscribe to events)
+  const { initGenerationPipeline } = await import('./services/generation');
+  await initGenerationPipeline();
+
   console.warn(`
   ╔══════════════════════════════════════════╗
   ║                                          ║
@@ -49,6 +57,7 @@ httpServer.listen(env.PORT, () => {
   ║   Running on port ${String(env.PORT).padEnd(25)}║
   ║   Environment: ${env.NODE_ENV.padEnd(23)}║
   ║   CORS origin: ${env.CORS_ORIGIN.padEnd(23)}║
+  ║   OpenAI: ${env.OPENAI_API_KEY ? 'configured' : 'NOT SET (fallback mode)'}${' '.repeat(env.OPENAI_API_KEY ? 13 : 3)}║
   ║                                          ║
   ╚══════════════════════════════════════════╝
   `);
