@@ -10,13 +10,13 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@footballeroo/shared": "workspace:*",
+    "@footballeroo/shared": "*",
     "next": "^14.2.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "next-auth": "^4.24.0",
     "@auth/prisma-adapter": "^2.0.0",
-    "@footballeroo/database": "workspace:*",
+    "@footballeroo/database": "*",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.400.0",
     "class-variance-authority": "^0.7.0",

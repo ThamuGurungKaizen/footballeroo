@@ -11,8 +11,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@footballeroo/shared": "workspace:*",
-    "@footballeroo/database": "workspace:*",
+    "@footballeroo/shared": "*",
+    "@footballeroo/database": "*",
     "express": "^4.19.0",
     "cors": "^2.8.5",
     "helmet": "^7.1.0",
