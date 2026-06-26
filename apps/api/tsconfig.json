@@ -2,14 +2,15 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
     "module": "commonjs",
     "moduleResolution": "node",
     "declaration": true,
     "paths": {
-      "@footballeroo/shared": ["../../packages/shared/src"]
+      "@footballeroo/shared": ["../../packages/shared/src"],
+      "@footballeroo/database": ["../../packages/database/src"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../../packages/shared/src/**/*", "../../packages/database/src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
+
